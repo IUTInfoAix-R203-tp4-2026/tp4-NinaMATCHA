@@ -38,6 +38,10 @@ public class Animal {
     return type;
   }
 
+  // private static Animal creerAnimal(String nom, String type) {
+  //  return new Animal(nom, type);
+  //
+
   // Retourne le cri de l'animal selon son type.
   public String faireDuBruit() {
     switch (type) {
