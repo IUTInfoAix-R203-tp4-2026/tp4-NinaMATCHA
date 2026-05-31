@@ -84,12 +84,13 @@ public class App {
     m.choisir(1);
     m.choisir(3);
     m.choisir(1);
-    System.out.print(m.afficherHistorique());
+    System.out.print(m.historique.afficherHistorique());
   }
 
   private static void demoAnimal() {
     for (String type : new String[] {"chien", "chat", "vache", "canard"}) {
-      // System.out.printf("  %s : %s%n", type, new Animal.creerAnimal(type, type).faireDuBruit());
+      // System.out.printf(" %s : %s%n", type, new Animal.creerAnimal(type,
+      // type).faireDuBruit());
       System.out.printf("  %s : %s%n", type, new Animal(type, type).faireDuBruit());
     }
   }

@@ -59,7 +59,7 @@ class MenuTest {
 
   @Test
   void afficher_l_historique_vide_retourne_l_entete_seul() {
-    assertThat(new Menu().afficherHistorique()).isEqualTo("--- Historique ---\n");
+    assertThat(new Menu().historique.afficherHistorique()).isEqualTo("--- Historique ---\n");
   }
 
   @Test
@@ -70,7 +70,7 @@ class MenuTest {
     m.choisir(1);
     m.choisir(2);
     m.choisir(1);
-    assertThat(m.afficherHistorique()).isEqualTo("--- Historique ---\n- A\n- B\n- A\n");
+    assertThat(m.historique.afficherHistorique()).isEqualTo("--- Historique ---\n- A\n- B\n- A\n");
   }
 
   @Test
@@ -81,7 +81,7 @@ class MenuTest {
       m.choisir(1);
     }
     // 11 enregistrements, max 10 -> on doit avoir 10 lignes "- X"
-    String contenu = m.afficherHistorique();
+    String contenu = m.historique.afficherHistorique();
     long lignes = contenu.lines().filter(l -> l.equals("- X")).count();
     assertThat(lignes).isEqualTo(10);
   }
